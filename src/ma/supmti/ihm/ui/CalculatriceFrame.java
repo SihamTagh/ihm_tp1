@@ -14,7 +14,7 @@ import ma.supmti.ihm.events.EcritureListener;
 import ma.supmti.ihm.utils.FrameUtils;
 
 public class CalculatriceFrame extends JFrame {
-
+	
 	/**
 	 * 
 	 */
@@ -50,10 +50,10 @@ public class CalculatriceFrame extends JFrame {
 	
 	private void initEvents() {
 		for (CalculatriceButton button : buttons) {
-			if("=".equals(button.button.getText())) {
-				button.button.addActionListener(new CalculListener(this));
+			if("=".equals(button.getText())) {
+				button.addActionListener(new CalculListener(this));
 			} else {
-				button.button.addActionListener(new EcritureListener(this));
+				button.addActionListener(new EcritureListener(this));
 			}
 			
 		}
@@ -98,7 +98,6 @@ public class CalculatriceFrame extends JFrame {
 				
 		this.add(input, c);
 		/***************************************************/ 
-		
 		for(CalculatriceButton button : buttons) {
 			c.gridy = button.y_pos;
 			c.gridx = button.x_pos;
@@ -118,7 +117,7 @@ public class CalculatriceFrame extends JFrame {
 				c.fill = GridBagConstraints.BOTH;
 			}
 			
-			this.add(button.button, c);
+			this.add(button, c);
 		}
 	}
 }
